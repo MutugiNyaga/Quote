@@ -1,0 +1,6 @@
+<h3 class="card-subtitle mb-1 text-muted"> {{quote.author}} <span id="when">Posted: {{ quoty.datePosted | datePipe }} days ago.</span></h3>
+<div class="container-fluid" id="buttons">
+   <button type="submit" class="btn btn-primary" id= "like" (click)= 'upvote()'>{{quoty.likes }}</button>>Upvote</button>
+   <button type="submit" class="btn btn-success"id="dislike" (click)='downvote()'>{{ quoty.dislikes }}</button>  Downvote</button>
+   <button type="submit" class="btn btn-danger"(click)='deleteQuotes(true)' id="delete"></button>
+</div>

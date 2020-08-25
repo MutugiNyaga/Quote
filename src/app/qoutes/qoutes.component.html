@@ -1,0 +1,61 @@
+<div class="overlay">
+     <h1>{{ title | capitalize }}</h1>
+       <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-4"> 
+                   <app-quotes-form (add)="addQuote($event)"></app-quotes-form> 
+               </div>        
+              <form (ngSubmit)='addQuote() ;quotesForm.resetForm({})' #qoutesForm='ngForm'>
+                 <h2 class="colsp">Personalised Quotes</h2>
+                    <div class="form-group">            
+                      <input type="text" class="form-control" id="name" [(ngModel)]="quote.name" placeholder="Your Name" #name='ngModel'>
+                        <div *ngIf="name.invalid && name.dirty" class="alert alert-danger">
+                           <div *ngIf="name.errors.required">
+                           </div>
+                       </div>
+                  </div>
+  
+                   <div class="form-group">          
+                      <input type="text" class="form-control" id="author"[(ngModel)]="qoute.author" placeholder="Author" #author='ngModel'>
+                       <div *ngIf="author.invalid && author.dirty" class="alert alert-danger">
+                         <div *ngIf="author.errors.required">
+                         </div>
+                     </div>  
+                 </div>
+  
+                  <div class="form-group">                     
+                     <input type="text" class="form-control" id="quote" [(ngModel)]="quote.quote" placeholder="Publish Quote" #qoute='ngModel'>
+                         <div *ngIf="quote.invalid && quote.dirty" class="alert alert-danger">
+                            <div *ngIf="quote.errors.required">                    
+                             </div>
+                         </div>
+                  </div>
+                  <button type="submit" class="btn btn-sm btn-dark">Add Quote</button>
+                  <!-- buttons -->
+                  <!-- <button type="submit" class="btn btn-primary">Upvote</button>
+                  <button type="submit" class="btn btn-success">Downvote</button>
+                  <button type="submit" class="btn btn-danger">Post Quote</button> -->
+              </form>
+          </div>
+          </div>
+          <div class="col-sm-9">
+             <div class="all-cards">
+                 <div *ngFor="let quote of sortQuotes let i= index" class="card" style="width: 20rem;">
+                    <div class="card-body">
+                       <h4 class="card-title" appHighlightQoute >{{quote.title}} {{quote.maxlikes}}<button (click)='displayInfo(i)' class="btn btn-info btn-sm" id="quotes-button" >Show More</button></h4>
+                          <p class="card-text" id="param">{{quote.quote}}</p>
+                          <app-quote-details *ngIf='quote.showInfo' bind-quoty='quote' (isRead)='quoteDelete($event,i)'></app-quote-details>
+                          <span class="card-subtitle mb-2">Posted by: <span id="name">{{quote.name}}</span><span id="date">on: <span id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
+                    </div>
+                </div>
+             </div>                     
+         </div>
+   
+</div>
+           
+        
+       
+       
+    
+  
+            

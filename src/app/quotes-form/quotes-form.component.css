@@ -1,0 +1,17 @@
+.overlay {
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0; 
+  }
+
+.container-fluid{    
+    background: rgba(0, 0, 0, 0.8);
+    margin-top: 65px;
+    color: white; 
+    float: left;
+    font-size: 4.5em;
+    font-family: 'UnifrakturMaguntia', serif;   
+}
+   

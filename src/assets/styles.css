@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Copse|Delius+Swash+Caps|UnifrakturMaguntia|Unkempt&display=swap');
+
+
+html,body {
+    scroll-behavior: smooth;
+}
+
+main {
+    position: relative;
+    padding-top: 55px;
+}
+ul,li,a {
+	color: white;
+}
+
+nav .navbar {
+	margin: 0;
+	width: 95%;
+}
+.carousel-item {
+    position: relative !important;
+}
+.black-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
